@@ -29,7 +29,7 @@ async def test(request: Request):
 @app.get("/items", response_class=HTMLResponse)
 async def read_item(request: Request):
     
-    students = [ {"nombre": "alex", "edad": 20,"score": 50}, {"nombre": "alvaro", "edad": 20,"score": 50}, {"nombre": "david", "edad": 20,"score": 90}]
+    students = [ {"nombre": "pepe", "edad": 20,"score": 50}, {"nombre": "pepe", "edad": 20,"score": 50}, {"nombre": "pepe", "edad": 20,"score": 90}]
     return templates.TemplateResponse(
         request=request, name="students.html", context={"nombre": "pepe","students": students}                                                      
     )
