@@ -82,3 +82,17 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.lista-productos {
+    list-style-type: square; /* Viñetas cuadradas */
+    margin: 20px 0;
+    padding-left: 40px;
+    font-size: 1.1em;
+    color: #ff0000; /* Rojo */
+}
+
+.lista-productos li {
+    margin-bottom: 10px;
+    font-weight: bold; /* Resalta las marcas */
+}
+
