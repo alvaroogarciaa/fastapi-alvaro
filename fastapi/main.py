@@ -9,28 +9,30 @@ from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="fastapi/static"), name="static")
+templates = Jinja2Templates(directory="fastapi/templates")
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get("/", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
-@app.get("/test", response_class=HTMLResponse)
-async def test(request: Request):
-    
-   
-    return templates.TemplateResponse(
-        request=request, name="index.html", context={"nombre": "pepe"}                                                      
-    )
+@app.get("/frutas", response_class=HTMLResponse)
+async def frutas(request: Request):
+    return templates.TemplateResponse("frutas.html", {"request": request})
 
-@app.get("/items", response_class=HTMLResponse)
-async def read_item(request: Request):
-    
-    students = [ {"nombre": "pepe", "edad": 20,"score": 50}, {"nombre": "pepe", "edad": 20,"score": 50}, {"nombre": "pepe", "edad": 20,"score": 90}]
-    return templates.TemplateResponse(
-        request=request, name="students.html", context={"nombre": "pepe","students": students}                                                      
-    )
+@app.get("/pescado", response_class=HTMLResponse)
+async def pescado(request: Request):
+    return templates.TemplateResponse("pescados.html", {"request": request})
 
+@app.get("/alcohol", response_class=HTMLResponse)
+async def alcohol(request: Request):
+    return templates.TemplateResponse("alcoholes.html", {"request": request})
 
+@app.get("/about", response_class=HTMLResponse)
+async def about(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
+
+@app.get("/lacteos", response_class=HTMLResponse)
+async def lacteos(request: Request):
+    return templates.TemplateResponse("lacteos.html", {"request": request})

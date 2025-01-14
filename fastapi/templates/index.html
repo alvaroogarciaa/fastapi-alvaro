@@ -1,18 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>FastAPI</title>
-  <link rel="stylesheet" href="{{ url_for('static',path="css/style.css") }}" />
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepe Lotas - Supermercado</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Bienvenido a Pepe Lotas</h1>
+        <img src="/static/img/logo.png" alt="Logo de Pepe Lotas">
+    </header>
 
+    <nav>
+        <ul>
+            <li><a href="/frutas">Frutas</a></li>
+            <li><a href="/pescado">Pescado</a></li>
+            <li><a href="/alcohol">Alcohol</a></li>
+            <li><a href="/lacteos">Lácteos</a></li>
+            <li><a href="/about">Sobre Nosotros</a></li>
+        </ul>
+    </nav>
 
-   <img src="{{ url_for('static',path='img/torrado2.jpg') }}" alt="">
-    <a href="{{ url_for('read_item') }}">Home</a>
-    <a href="{{ url_for('static',path='css/style.css') }}">jjj</a>
-
-        <h1 >{{ nombre }}</h1>
-
+    <footer>
+        <p>&copy; 2025 Pepe Lotas. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
