@@ -3,12 +3,14 @@
 {% block title %}Menú - Come y Calla{% endblock %}
 
 {% block content %}
-<h1>Menú Principal</h1>
-<div class="menu-buttons">
-    <a href="{{ url_for('entradas') }}" class="button">Entradas</a>
-    <a href="{{ url_for('platos_principales') }}" class="button">Platos Principales</a>
-    <a href="{{ url_for('postres') }}" class="button">Postres</a>
-    <a href="{{ url_for('bebidas') }}" class="button">Bebidas</a>
-    <a href="{{ url_for('menu_infantil') }}" class="button">Menú Infantil</a>
-</div>
+<h1>Menú</h1>
+<p>Selecciona una categoría para explorar los platillos:</p>
+<ul>
+    <li><a href="/menu/entradas">Entradas</a></li>
+    <li><a href="/menu/platos-principales">Platos Principales</a></li>
+    <li><a href="/menu/postres">Postres</a></li>
+    <li><a href="/menu/bebidas">Bebidas</a></li>
+    <li><a href="/menu/menu-infantil">Menú Infantil</a></li>
+</ul>
+<a href="/">Volver al inicio</a>
 {% endblock %}

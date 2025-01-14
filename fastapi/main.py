@@ -22,6 +22,24 @@ async def index(request: Request):
 async def menu(request: Request):
     return templates.TemplateResponse("menu.html", {"request": request})
 
+
+@app.get("/menu/{categoria}", response_class=HTMLResponse)
+async def categoria_menu(request: Request, categoria: str):
+    items = {
+        "entradas": ["Ensalada César", "Sopa de Tomate", "Bruschetta"],
+        "platos-principales": ["Pasta Carbonara", "Pollo Asado", "Filete de Res"],
+        "postres": ["Tiramisú", "Cheesecake", "Helado Artesanal"],
+        "bebidas": ["Vino Tinto", "Cerveza Artesanal", "Limonada"],
+        "menu-infantil": ["Macarrones con Queso", "Mini Hamburguesa", "Palitos de Pollo"],
+    }
+
+    # Verifica si la categoría existe
+    if categoria not in items:
+        return templates.TemplateResponse("404.html", {"request": request})
+
+    return templates.TemplateResponse(
+        "categoria.html", {"request": request, "categoria": categoria, "items": items[categoria]}
+    )
 # Página de reservas
 @app.get("/reservas", response_class=HTMLResponse)
 async def reservas(request: Request):
