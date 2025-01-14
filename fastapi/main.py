@@ -21,9 +21,9 @@ async def index(request: Request):
 async def frutas(request: Request):
     return templates.TemplateResponse("frutas.html", {"request": request})
 
-@app.get("/pescado", response_class=HTMLResponse)
+@app.get("/pescado-marisco", response_class=HTMLResponse)
 async def pescado(request: Request):
-    return templates.TemplateResponse("pescados.html", {"request": request})
+    return templates.TemplateResponse("pescados-mariscos.html", {"request": request})
 
 @app.get("/alcohol", response_class=HTMLResponse)
 async def alcohol(request: Request):
