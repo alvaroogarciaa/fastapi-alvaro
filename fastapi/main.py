@@ -29,10 +29,6 @@ async def pescado(request: Request):
 async def alcohol(request: Request):
     return templates.TemplateResponse("alcoholes.html", {"request": request})
 
-@app.get("/about", response_class=HTMLResponse)
-async def about(request: Request):
-    return templates.TemplateResponse("about.html", {"request": request})
-
 @app.get("/lacteos", response_class=HTMLResponse)
 async def lacteos(request: Request):
     return templates.TemplateResponse("lacteos.html", {"request": request})
