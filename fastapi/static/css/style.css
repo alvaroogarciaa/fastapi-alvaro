@@ -2,16 +2,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('/static/img/background.jpg'); /* Imagen de fondo */
+    background-image: url('/static/img/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #ff0000; /* Rojo para el texto principal */
+    color: #ff0000;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.9); /* Negro semitransparente */
-    color: #ff0000; /* Rojo */
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ff0000;
     text-align: center;
     padding: 20px 10px;
 }
@@ -57,7 +57,7 @@ main {
 .producto h2 {
     margin-bottom: 10px;
     font-size: 1.2em;
-    color: #ff0000; /* Rojo para los títulos */
+    color: #ff0000;
 }
 
 .producto-img {
@@ -75,10 +75,10 @@ main {
 
 footer {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.9); /* Negro */
-    color: #ff0000; /* Rojo */
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ff0000;
     padding: 10px;
-    position: relative;
+    position: absolute;
     width: 100%;
     bottom: 0;
 }
