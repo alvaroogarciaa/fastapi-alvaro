@@ -3,7 +3,7 @@
 {% block title %}Reserva Confirmada{% endblock %}
 
 {% block content %}
-<h1>Reserva Confirmada</h1>
-<p>Gracias, {{ nombre }}. Tu reserva para el {{ fecha }} a las {{ hora }} ha sido confirmada.</p>
-<a href="/">Volver al inicio</a>
+    <h1>Reserva Confirmada</h1>
+    <p>Gracias, {{ nombre }}. Tu reserva para el {{ fecha }} a las {{ hora }} ha sido confirmada.</p>
+    <a href="{{ url_for('index') }}">Volver al inicio</a>
 {% endblock %}

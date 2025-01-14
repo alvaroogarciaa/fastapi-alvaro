@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Come y Calla{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}" />
     {% block css %}{% endblock %}
-    {% block head %}{% endblock %}
 </head>
 <body>
     <header>
-        <h1>Restaurante Come y Calla</h1>
         <nav>
-            <a href="/">Inicio</a>
-            <a href="/menu">Menú</a>
-            <a href="/reservas">Reservas</a>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('menu') }}">Menú</a></li>
+                <li><a href="{{ url_for('reservas') }}">Reservas</a></li>
+            </ul>
         </nav>
     </header>
 
-    {% block content %}{% endblock %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
     <footer>
-        <p>&copy; 2025 Restaurante Come y Calla. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Come y Calla. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
