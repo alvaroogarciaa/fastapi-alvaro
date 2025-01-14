@@ -36,3 +36,11 @@ async def alcohol(request: Request):
 @app.get("/lacteos", response_class=HTMLResponse)
 async def lacteos(request: Request):
     return templates.TemplateResponse("lacteos.html", {"request": request})
+
+@app.get("/frutas/frutas-temporada")
+async def frutas_temporada(request: Request):
+    return templates.TemplateResponse("frutas-temporada.html", {"request": request})
+
+@app.get("/frutas/frutas-exoticas")
+async def frutas_exoticas(request: Request):
+    return templates.TemplateResponse("frutas-exoticas.html", {"request": request})
