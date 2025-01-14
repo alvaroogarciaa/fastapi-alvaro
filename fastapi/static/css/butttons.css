@@ -1,0 +1,25 @@
+/* Estilos de botones */
+button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #3e8e41;
+}
+
+/* Botones en formularios */
+form button {
+    width: 100%;
+    padding: 14px 0;
+}

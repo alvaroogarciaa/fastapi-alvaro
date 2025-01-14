@@ -1,97 +1,34 @@
-/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
-nav {
-    background-color: #333;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    padding: 8px 15px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: #575757;
-}
-
-h1 {
-    color: #333;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos para el formulario */
-form {
-    background-color: white;
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: auto;
-    display: block;
 }
 
-form label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-form input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
+/* Estilo del pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
 
-/* Estilos para el menú */
-div {
-    text-align: center;
-    margin-top: 20px;
+/* Enlaces en pie de página */
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
 }
-
-div button {
-    margin: 10px;
-}
-
-/* Estilos para la página de confirmación */
-h2 {
-    color: green;
-    text-align: center;
+footer a:hover {
+    text-decoration: underline;
 }
