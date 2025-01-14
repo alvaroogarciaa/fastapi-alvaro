@@ -17,6 +17,10 @@ templates = Jinja2Templates(directory="templates")
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+@app.get("/torrado")
+async def frutas_exoticas(request: Request):
+    return templates.TemplateResponse("torrado.html", {"request": request})
+
 @app.get("/frutas", response_class=HTMLResponse)
 async def frutas(request: Request):
     return templates.TemplateResponse("frutas.html", {"request": request})
