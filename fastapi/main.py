@@ -17,34 +17,25 @@ templates = Jinja2Templates(directory="templates")
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.get("/torrado")
-async def frutas_exoticas(request: Request):
-    return templates.TemplateResponse("torrado.html", {"request": request})
+# Menú del restaurante
+@app.get("/menu", response_class=HTMLResponse)
+async def menu(request: Request):
+    return templates.TemplateResponse("menu.html", {"request": request})
 
-@app.get("/frutas", response_class=HTMLResponse)
-async def frutas(request: Request):
-    return templates.TemplateResponse("frutas.html", {"request": request})
+# Página de reservas
+@app.get("/reservas", response_class=HTMLResponse)
+async def reservas(request: Request):
+    return templates.TemplateResponse("reservas.html", {"request": request})
 
-@app.get("/pescado", response_class=HTMLResponse)
-async def pescado(request: Request):
-    return templates.TemplateResponse("pescados.html", {"request": request})
-
-@app.get("/marisco", response_class=HTMLResponse)
-async def pescado(request: Request):
-    return templates.TemplateResponse("mariscos.html", {"request": request})
-
-@app.get("/alcohol", response_class=HTMLResponse)
-async def alcohol(request: Request):
-    return templates.TemplateResponse("alcoholes.html", {"request": request})
-
-@app.get("/lacteos", response_class=HTMLResponse)
-async def lacteos(request: Request):
-    return templates.TemplateResponse("lacteos.html", {"request": request})
-
-@app.get("/frutas/frutas-temporada")
-async def frutas_temporada(request: Request):
-    return templates.TemplateResponse("frutas-temporada.html", {"request": request})
-
-@app.get("/frutas/frutas-exoticas")
-async def frutas_exoticas(request: Request):
-    return templates.TemplateResponse("frutas-exoticas.html", {"request": request})
+# Procesar la reserva
+@app.post("/reservar", response_class=HTMLResponse)
+async def reservar(request: Request, nombre: str = Form(...), fecha: str = Form(...), hora: str = Form(...)):
+    return f"""
+    <html>
+        <body>
+            <h2>Reserva Confirmada</h2>
+            <p>Gracias, {nombre}, tu reserva para el {fecha} a las {hora} ha sido confirmada.</p>
+            <a href="/">Volver al inicio</a>
+        </body>
+    </html>
+    """

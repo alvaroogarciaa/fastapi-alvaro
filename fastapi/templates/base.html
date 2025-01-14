@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}" />
+    {% block css %}{% endblock %}
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>Restaurante La Buena Mesa</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/menu">Menú</a>
+            <a href="/reservas">Reservas</a>
+        </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>&copy; 2025 Restaurante La Buena Mesa. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

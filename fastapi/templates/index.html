@@ -1,61 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprame Esta - SUPERMERCADO</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body class="index-page">
-    <header>
-        <div class="banner">
-            <h1>Bienvenido a Comprame Esta</h1>
-            <p>VENGA, COMPRAME LA QUE ESTA DE AQUI</p>
-        </div>
-    </header>
-    <main>
-        <section class="productos">
-            <div class="producto">
-                <h2>Frutas</h2>
-                <a href="/frutas">
-                    <img src="/static/img/frutas.webp" alt="Frutas" class="producto-img">
-                </a>
-            </div>
-            <div class="producto">
-                <h2>Pescado</h2>
-                <a href="/pescado">
-                    <img src="/static/img/pescado.webp" alt="Pescado" class="producto-img">
-                </a>
-            </div>
-            <div class="producto">
-                <h2>Marisco</h2>
-                <a href="/marisco">
-                    <img src="/static/img/marisco.webp" alt="Marisco" class="producto-img">
-                </a>
-            </div>
-            <div class="producto">
-                <h2>Alcohol</h2>
-                <a href="/alcohol">
-                    <img src="/static/img/alcohol.webp" alt="Alcohol" class="producto-img">
-                </a>
-            </div>
-            <div class="producto">
-                <h2>Lácteos</h2>
-                <a href="/lacteos">
-                    <img src="/static/img/lacteos.webp" alt="Lácteos" class="producto-img">
-                </a>
-            </div>
-            <div class="producto">
-                <h2>TORRADOOOO</h2>
-                <a href="/torrado">
-                    <img src="/static/img/torrado2.jpg" alt="torrado" class="producto-img">
-                </a>
-            </div>
-        </section>
-    </main>
+{% extends "base.html" %}
 
-    <footer>
-        <p>&copy; 2025 Comprame Esta. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+{% block title %}Bienvenidos a La Buena Mesa{% endblock %}
+
+{% block content %}
+    <h2>¡Bienvenidos a nuestro restaurante!</h2>
+    <p>Disfruta de nuestros platos gourmet, un ambiente acogedor y una excelente atención.</p>
+    <a href="/menu">Ver nuestro menú</a>
+{% endblock %}
+
