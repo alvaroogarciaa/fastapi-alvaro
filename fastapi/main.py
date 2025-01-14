@@ -28,18 +28,9 @@ async def reservas(request: Request):
     return templates.TemplateResponse("reservas.html", {"request": request})
 
 # Procesar la reserva
-@app.post("/reservar", response_class=HTMLResponse)
-async def reservar(request: Request):
-    # Obtener los datos del formulario directamente
-    form_data = await request.form()
-    nombre = form_data.get('nombre')
-    fecha = form_data.get('fecha')
-    hora = form_data.get('hora')
-
-    # Pasar los datos a la plantilla de confirmación
-    return templates.TemplateResponse("reserva_confirmada.html", {
-        "request": request, 
-        "nombre": nombre, 
-        "fecha": fecha, 
-        "hora": hora
-    })
+@app.get("/reservar", response_class=HTMLResponse)
+async def reservar(request: Request, nombre: str, fecha: str, hora: str):
+    return templates.TemplateResponse(
+        "confirmacion.html",
+        {"request": request, "nombre": nombre, "fecha": fecha, "hora": hora},
+    )

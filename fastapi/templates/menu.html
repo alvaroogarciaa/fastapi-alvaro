@@ -1,14 +1,77 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Come y Calla</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Menú de "Come y Calla"</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/reservar">Reservar</a>
+            <a href="/contacto">Contacto</a>
+        </nav>
+    </header>
 
-{% block title %}Nuestro Menú{% endblock %}
+    <main>
+        <section>
+            <h2>Entradas</h2>
+            <ul>
+                <li><strong>Sopa del Chef</strong> - $5.00: Una mezcla de verduras frescas y caldo casero, servido con pan crujiente.</li>
+                <li><strong>Bruschetta de Tomate</strong> - $6.50: Pan tostado con tomate fresco, albahaca, ajo y un toque de aceite de oliva.</li>
+                <li><strong>Tarta de Espinacas y Queso</strong> - $7.00: Masa crujiente rellena de espinacas y queso ricotta, acompañada de una ensalada ligera.</li>
+                <li><strong>Tequeños Rellenos de Queso</strong> - $5.50: Crujientes palitos de masa rellenos de queso fundido, acompañados de salsa de ajo.</li>
+            </ul>
+        </section>
 
-{% block content %}
-    <h2>Menú del Restaurante</h2>
-    <ul>
-        <li><strong>Pizza Margarita</strong> - $10.00</li>
-        <li><strong>Pasta Carbonara</strong> - $12.50</li>
-        <li><strong>Ensalada César</strong> - $7.00</li>
-        <li><strong>Pollo a la Parrilla</strong> - $15.00</li>
-    </ul>
-    <a href="/reservas">Haz una reserva</a>
-{% endblock %}
+        <section>
+            <h2>Platos Principales</h2>
+            <ul>
+                <li><strong>Pizza Margarita</strong> - $10.00: Salsa de tomate, mozzarella fresca, albahaca y un toque de aceite de oliva.</li>
+                <li><strong>Pollo a la Parrilla con Papas</strong> - $15.00: Pollo marinado y cocinado a la parrilla, acompañado de papas doradas y ensalada.</li>
+                <li><strong>Pasta Alfredo con Pollo</strong> - $12.50: Pasta al dente bañada en salsa cremosa de queso parmesano, con trozos de pollo.</li>
+                <li><strong>Hamburguesa "Come y Calla"</strong> - $13.00: Carne de res jugosa, queso cheddar, bacon, lechuga, tomate y mayonesa en pan artesanal.</li>
+                <li><strong>Tacos de Pescado</strong> - $11.00: Tacos con filete de pescado a la parrilla, repollo rallado y salsa de aguacate.</li>
+                <li><strong>Lasagna Vegetariana</strong> - $14.00: Capas de pasta, salsa de tomate, ricotta, espinacas y champiñones, todo al horno.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Postres</h2>
+            <ul>
+                <li><strong>Tarta de Limón</strong> - $5.00: Deliciosa tarta de limón con base crujiente, crema suave y un toque de merengue.</li>
+                <li><strong>Brownie con Helado</strong> - $6.00: Brownie de chocolate fundido, servido con una bola de helado de vainilla.</li>
+                <li><strong>Cheesecake de Fresas</strong> - $7.00: Cheesecake suave sobre una base de galleta, con fresas frescas y salsa de frambuesa.</li>
+                <li><strong>Fruta Fresca de Temporada</strong> - $4.00: Una selección de frutas frescas y tropicales, ideal para un toque ligero.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Bebidas</h2>
+            <ul>
+                <li><strong>Limonada Casera</strong> - $3.00: Refrescante limonada hecha con limones frescos y un toque de menta.</li>
+                <li><strong>Café Espresso</strong> - $2.00: Café fuerte y aromático servido en su versión más pura.</li>
+                <li><strong>Cócteles de Frutas</strong> - $5.00: Mezcla de frutas tropicales frescas, ideal para acompañar cualquier plato.</li>
+                <li><strong>Agua Mineral</strong> - $1.50: Agua mineral de manantial, para acompañar de forma ligera.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Menú Infantil</h2>
+            <ul>
+                <li><strong>Mini Pizza Margarita</strong> - $6.00: Pizza de tamaño mini con salsa de tomate y queso mozzarella.</li>
+                <li><strong>Pasta con Salsa de Tomate</strong> - $5.00: Pasta con salsa de tomate casera y un toque de queso parmesano.</li>
+                <li><strong>Nuggets de Pollo con Papas</strong> - $6.50: Nugget de pollo crujientes, acompañados de papas fritas y ketchup.</li>
+                <li><strong>Helado de Chocolate</strong> - $3.00: Una bola de helado de chocolate con topping de chocolate.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Come y Calla - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
