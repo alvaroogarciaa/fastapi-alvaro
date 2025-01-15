@@ -1,6 +1,6 @@
 /* Estilo de títulos */
 h1, h2, h3 {
-    color: #333;
+    color: #d12424;
     text-align: center;
     margin-top: 40px;
 }
@@ -11,7 +11,7 @@ h1 {
 
 h2 {
     font-size: 30px;
-    color: #555;
+    color: #bd0f0f;
 }
 
 h3 {
@@ -22,7 +22,7 @@ h3 {
 /* Estilos de párrafos */
 p {
     font-size: 18px;
-    color: #555;
+    color: #be0a0a;
     line-height: 1.6;
     text-align: center;
 }
