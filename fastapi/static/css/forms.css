@@ -1,33 +1,63 @@
-/* Estilos generales de formularios */
-form {
+.formulario body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.formulario {
     background-color: #ffffff;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
 }
 
-form label {
+.formulario label {
     font-size: 16px;
-    margin-bottom: 5px;
+    font-weight: bold;
+    margin-bottom: 8px;
     display: block;
+    color: #333;
 }
 
-form input, form select {
+.formulario input, form select, form button {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
     border-radius: 5px;
     border: 1px solid #ddd;
+    box-sizing: border-box;
 }
 
-form input:focus, form select:focus {
+.formulario input:focus, .formulario select:focus {
     border-color: #4CAF50;
     outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
-form button {
-    width: auto;
+.formulario button {
     background-color: #4CAF50;
     color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #45a049;
+}
+
+.formulario h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
 }
