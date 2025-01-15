@@ -20,14 +20,3 @@ nav a:hover {
     background-color: #575757;
 }
 
-/* Menú en el móvil */
-@media (max-width: 768px) {
-    nav {
-        text-align: left;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-}
