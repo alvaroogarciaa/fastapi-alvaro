@@ -1,14 +1,44 @@
 {% extends "base.html" %}
 
-{% block title %}Entradas - Come y Calla{% endblock %}
+{% block title %}Entrantes - Come y Calla{% endblock %}
+{% block body_class %}entrantes-page{% endblock %}
 
 {% block content %}
-    <h1>Entradas</h1>
+    <h1>Entrantes</h1>
     <p>Para un buen picoteo.</p>
-    <ul>
-        <li>Ensalada de tomate y mozzarella</li>
-        <li>Patatas bravas</li>
-        <li>Nachos con queso</li>
-        <li>Croquetas caseras</li>
-    </ul>
+    
+    <div class="cards-container">
+        <div class="card">
+            <img src="{{ url_for('static', path='static/img/ensalada-tomate-mozzarella.jpg') }}" alt="Ensalada de tomate y mozzarella">
+            <div class="card-body">
+                <h2>Ensalada de tomate y mozzarella</h2>
+                <p>Tomate fresco, mozzarella de búfala y albahaca, aderezada con aceite de oliva virgen extra.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', path='static/img/patatas-bravas.jpg') }}" alt="Patatas bravas">
+            <div class="card-body">
+                <h2>Patatas bravas</h2>
+                <p>Patatas fritas acompañadas de salsa brava picante y alioli.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', path='static/img/nachos-queso.jpg') }}" alt="Nachos con queso">
+            <div class="card-body">
+                <h2>Nachos con queso</h2>
+                <p>Crispísimos nachos cubiertos con queso fundido y acompañados de guacamole y salsa.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', path='static/img/croquetas-caseras.jpg') }}" alt="Croquetas caseras">
+            <div class="card-body">
+                <h2>Croquetas caseras</h2>
+                <p>Croquetas crujientes rellenas de jamón ibérico y bechamel.</p>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
