@@ -6,9 +6,37 @@
 {% block content %}
     <h1>Menú Infantil</h1>
     <p>Para los peques de la casa.</p>
-    <ul>
-        <li>Macarrones con tomate 6.50€</li>
-        <li>Hamburguesa con patatas fritas 8.50€</li>
-        <li>Pizza de jamón y queso 7.50€</li>
-    </ul>
+    <div class="cards-container">
+        <div class="card">
+            <img src="/static/img/macarrones.webp" alt="macarrones">
+            <div class="card-body">
+                <h2>Macarrones con tomate</h2>
+                <p>Al italiano este que bien se le da la cocina al jodio, pidelo niño.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/static/img/hamburguesa.webp" alt="hamburguesa">
+            <div class="card-body">
+                <h2>Hamburguesa con patatas fritas</h2>
+                <p>Solo mira la pinta, que lustre tiene y que buena esta.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/static/img/pizza-jamon.webp" alt="pizza">
+            <div class="card-body">
+                <h2>Pizza de jamón y queso</h2>
+                <p>Que especial es esta pizza, se han puesto el italiano y la abuela a hacerla juntos.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/static/img/fingers-pollo.webp" alt="fingers-pollo">
+            <div class="card-body">
+                <h2>Fingers de pollo</h2>
+                <p>Croquetas crujientes rellenas de jamón ibérico y bechamel.</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

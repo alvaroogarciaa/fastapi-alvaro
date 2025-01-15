@@ -1,42 +1,124 @@
+
 .entrantes-page body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    
 }
 
 .entrantes-page h1 {
     color: #2c3e50;
-    text-align: left;
+    text-align: center;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .entrantes-page p {
-    text-align: left;
+    text-align: center;
     font-size: 1.1rem;
     color: #555;
+    
 }
 
+.menu-infantil-page body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.menu-infantil-page h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.menu-infantil-page p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    
+}
+
+.bebidas-page body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.bebidas-page h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.bebidas-page p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    
+}
+
+.postres-page body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.postres-page h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.postres-page p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    
+}
+
+.platos-principales-page body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.platos-principales-page h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.platos-principales-page p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    
+}
 
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Disposición en columna */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 20px;
-    justify-items: center;
+    min-height: 50vh;
 }
 
 .card {
+    width: 250px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
-
 .card img {
     width: 100%;
     height: 200px;
@@ -44,19 +126,18 @@
 }
 
 .card-body {
-    padding: 15px;
-    text-align: center;
+    padding: 10px;
 }
 
 .card h2 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
 
 .card p {
     font-size: 1rem;
     color: #555;
+    text-align: center;
 }
 
 .card:hover {

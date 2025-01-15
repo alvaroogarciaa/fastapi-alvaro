@@ -6,10 +6,37 @@
 {% block content %}
     <h1>Postres</h1>
     <p>Nuestro toque más dulzón.</p>
-    <ul>
-        <li>Tarta de chocolate</li>
-        <li>Helado de vainilla con frutas</li>
-        <li>Arroz con leche</li>
-        <li>Tiramisú</li>
-    </ul>
+    <div class="cards-container">
+        <div class="card">
+            <img src="/static/img/tarta.webp" alt="tarta">
+            <div class="card-body">
+                <h2>Tarta de chocolate</h2>
+                <p>Tartita de choco al mas estilo belga, nuestro chef sa lucio' y buenisima.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/static/img/helado.webp" alt="helado">
+            <div class="card-body">
+                <h2>Helado de vainilla con frutas</h2>
+                <p>Recien sacada de la vainilla, en verdad, comprada de la tarrina del mercadona y las frutas recien sacadas del huerto de paco.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/static/img/arroz-leche.webp" alt="arroz-leche">
+            <div class="card-body">
+                <h2>Arroz con leche</h2>
+                <p>El arroz con leche, cosa mala, el arroz es de las sobras de la paella de marisco, y la leche recien sacada de la vaca.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/static/img/tiramisu.webp" alt="tiramisu">
+            <div class="card-body">
+                <h2>Tiramisú</h2>
+                <p>Pues nah que la abuela se ha motivado y dice de hacer el tiramisú, y si no lo pides te arrea una buena.</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

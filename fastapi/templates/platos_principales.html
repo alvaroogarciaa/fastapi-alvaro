@@ -5,10 +5,37 @@
 {% block content %}
     <h1>Platos Principales</h1>
     <p>VENGA, COME Y CALLA!</p>
-    <ul>
-        <li>Paella de mariscos</li>
-        <li>Filete de ternera con patatas fritas</li>
-        <li>Pizza Margarita</li>
-        <li>Espaguetis a la carbonara</li>
-    </ul>
+    <div class="cards-container">
+        <div class="card">
+            <img src="/static/img/paella-marisco.webp" alt="paella-mariscos">
+            <div class="card-body">
+                <h2>Paella de mariscos</h2>
+                <p>Paella perfectamente hecha por nuestro chef valenciano y mariscos recien salido de galicia.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/static/img/filete.webp" alt="filete">
+            <div class="card-body">
+                <h2>Filete de ternera con patatas fritas</h2>
+                <p>Filete de ternera a baja temperatura con salsa de la casa y patatas fritas.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/static/img/pizza.webp" alt="pizza">
+            <div class="card-body">
+                <h2>Pizza Margarita</h2>
+                <p>Pizza margarita hecha por nuestro cocinero italiano al mas estilo napolitano, nacido al ladito del mural de maradona.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/static/img/espaguetis.webp" alt="espaguetis">
+            <div class="card-body">
+                <h2>Espaguetis a la carbonara</h2>
+                <p>Como nuestro chef italiano no le da para mas hemos contratrado a su abuela que dice que cocina mu bien.</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

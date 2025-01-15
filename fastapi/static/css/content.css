@@ -1,6 +1,16 @@
+body {
+    background-image: url('/static/img/fondo.webp');
+    background-size: cover;  
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+}
+.index h1{
+    color: white;
+}
 
 h1, h2, h3 {
-    color: #333;
+    color: #d3d0d0;
     text-align: center;
     margin-top: 40px;
 }
@@ -11,18 +21,18 @@ h1 {
 
 h2 {
     font-size: 30px;
-    color: #555;
+    color: #f5f5f5;
 }
 
 h3 {
     font-size: 24px;
-    color: #777;
+    color: #eeeeee;
 }
 
 
 p {
     font-size: 18px;
-    color: #555;
+    color: #e7e7e7;
     line-height: 1.6;
     text-align: center;
 }
