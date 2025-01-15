@@ -1,15 +1,35 @@
 {% extends "base.html" %}
 
 {% block title %}Menú - Come y Calla{% endblock %}
-
+{% block body_class %}menu-page{% endblock %}
 {% block content %}
     <h1>Menú</h1>
     <p>Elige entre nuestras deliciosas opciones:</p>
-    <div>
-        <button onclick="window.location.href='/menu/entrantes'">Entradas</button>
-        <button onclick="window.location.href='/menu/platos-principales'">Platos Principales</button>
-        <button onclick="window.location.href='/menu/postres'">Postres</button>
-        <button onclick="window.location.href='/menu/bebidas'">Bebidas</button>
-        <button onclick="window.location.href='/menu/menu-infantil'">Menú Infantil</button>
+    <div class="menu-buttons">
+        <button onclick="window.location.href='/menu/entrantes'">
+            <img src="/ruta/a/imagen-de-entrante.jpg" alt="Entrantes">
+            <span>Entrantes</span>
+            <p>Deliciosas opciones para empezar tu comida.</p>
+        </button>
+        <button onclick="window.location.href='/menu/platos-principales'">
+            <img src="/ruta/a/imagen-de-plato-principal.jpg" alt="Platos Principales">
+            <span>Platos Principales</span>
+            <p>Platos principales que te harán COMER Y CALLAR.</p>
+        </button>
+        <button onclick="window.location.href='/menu/postres'">
+            <img src="/ruta/a/imagen-de-postre.jpg" alt="Postres">
+            <span>Postres</span>
+            <p>Nuestro toque mas dulce</p>
+        </button>
+        <button onclick="window.location.href='/menu/bebidas'">
+            <img src="/ruta/a/imagen-de-bebida.jpg" alt="Bebidas">
+            <span>Bebidas</span>
+            <p>Beben y beben los peces en el rio...</p>
+        </button>
+        <button onclick="window.location.href='/menu/menu-infantil'">
+            <img src="/fastapi/static/img/torrado1.jpg" alt="Menú Infantil">
+            <span>Menú Infantil</span>
+            <p>Haz callar a tu hijo. <br> Es torrado </p>
+        </button>
     </div>
 {% endblock %}

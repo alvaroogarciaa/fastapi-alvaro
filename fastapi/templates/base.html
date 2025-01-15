@@ -6,12 +6,11 @@
     <title>{% block title %}Come y Calla{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', path='css/navbar.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', path='css/buttons.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', path='css/forms.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', path='css/content.css') }}" />
     {% block css %}{% endblock %}
 </head>
-<body>
+<body class="{% block body_class %}menu-page{% endblock %}">
     <header>
         <nav>
             <ul>
@@ -25,9 +24,9 @@
     <main>
         {% block content %}{% endblock %}
     </main>
-
     <footer>
         <p>&copy; 2025 Come y Calla. Todos los derechos reservados.</p>
     </footer>
+    
 </body>
 </html>

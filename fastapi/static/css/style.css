@@ -5,30 +5,97 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Contenedor principal */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Estilo del pie de página */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position:fixed;
     bottom: 0;
     width: 100%;
 }
 
-/* Enlaces en pie de página */
 footer a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
 }
+
 footer a:hover {
     text-decoration: underline;
+}
+
+
+
+.menu-page {
+    font-family: Arial, sans-serif;
+    background-color: #acaaaa;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu-page h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.menu-page p {
+    color: #525252;
+    margin-bottom: 30px;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.menu-buttons button {
+    background-color: #383838;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    height: 250px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(7, 7, 7, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-buttons button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu-buttons button img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.menu-buttons button span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #dbdbdb;
+}
+
+.menu-buttons button p {
+    font-size: 14px;
+    color: #dbdbdb;
+    margin: 0;
 }
