@@ -1,9 +1,7 @@
-
 .entrantes-page body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    
 }
 
 .entrantes-page h1 {
@@ -14,46 +12,6 @@
 }
 
 .entrantes-page p {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #555;
-    
-}
-
-.menu-infantil-page body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.menu-infantil-page h1 {
-    color: #2c3e50;
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.menu-infantil-page p {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #555;
-    
-}
-
-.bebidas-page body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.bebidas-page h1 {
-    color: #2c3e50;
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.bebidas-page p {
     text-align: center;
     font-size: 1.1rem;
     color: #555;
@@ -110,6 +68,24 @@
     min-height: 50vh;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+}
 .card {
     width: 250px;
     background-color: #fff;
@@ -126,14 +102,15 @@
 }
 
 .card-body {
-    padding: 10px;
+    padding: 15px;
+    text-align: center;
 }
 
 .card h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
 }
-
 .card p {
     font-size: 1rem;
     color: #555;
