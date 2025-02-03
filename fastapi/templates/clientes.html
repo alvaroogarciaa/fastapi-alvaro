@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Clientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+</head>
+<body>
+    {% if nombre %}
+        <h1>Bienvenido, estás gestionando clientes {{nombre}}</h1>
+    {% endif %}
+    
+    {% if clientes %}
+        <h2>Lista de Clientes:</h2>
+        {% for cliente in clientes %}
+            <p>{{cliente.nombre}}</p>
+        {% endfor %}
+    {% else %}
+        <h1>No hay clientes</h1>
+    {% endif %}
+
+
+    <h2>Añadir cliente</h2>
+    <form action="/clientes/add" method="post">
+        <input type="text" name="nombre" placeholder="nombre del cliente" required>
+        <button type="submit">Añadir</button>
+    </form>
+
+
+    <h2>Eliminar cliente</h2>
+    <form action="{{url_for('delete_clientes')}}" method="post">
+        <input type="text" name="nombre" placeholder="nombre del cliente a eliminar" required>
+        <input type="submit" value="Eliminar">
+    </form>
+
+
+    <h2>Buscar Cliente</h2>
+    <form action="{{ url_for('buscar_cliente') }}" method="get">
+        <input type="text" name="modelo" placeholder="Nombre del cliente a buscar" required>
+        <input type="submit" value="Buscar">
+    </form>
+
+</body>
+</html>

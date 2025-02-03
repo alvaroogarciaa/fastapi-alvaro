@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente Encontrado</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+</head>
+<body>
+    <h1>Cliente Encontrado</h1>
+    <p>Nombre: {{ cliente.nombre }}</p>
+    <p>ID: {{ cliente.id }}</p>
+    <a href="/clientes">Volver a la lista</a>
+</body>
+</html>
