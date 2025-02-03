@@ -19,10 +19,11 @@
 
 
     <h2>Añadir cliente</h2>
-    <form action="/clientes/add" method="post">
-        <input type="text" name="nombre" placeholder="nombre del cliente" required>
-        <button type="submit">Añadir</button>
+    <form action="/clientes" method="get">
+        <input type="text" name="nombre" placeholder="Buscar cliente">
+        <button type="submit">Buscar</button>
     </form>
+    
 
 
     <h2>Eliminar cliente</h2>
@@ -34,7 +35,7 @@
 
     <h2>Buscar Cliente</h2>
     <form action="{{ url_for('buscar_cliente') }}" method="get">
-        <input type="text" name="modelo" placeholder="Nombre del cliente a buscar" required>
+        <input type="text" name="nombre" placeholder="Nombre del cliente a buscar" required>
         <input type="submit" value="Buscar">
     </form>
 

@@ -1,4 +1,6 @@
-class Cliente:
-    def __init__(self, id : int,nombre : str):
-        self.id = id
-        self.nombre = nombre
+from pydantic import BaseModel
+from typing import Optional
+
+class Cliente(BaseModel):
+    id: Optional[int] = None
+    nombre: str
