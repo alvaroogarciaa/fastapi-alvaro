@@ -1,12 +1,21 @@
+from data.database import database
+from typing import Annotated
+
+from data.dao.dao_clientes import DaoClientes
+
+from data.modelo.cliente import Cliente
+
 from typing import Union
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Form
 
+from fastapi.responses import RedirectResponse
+from pydantic import BaseModel
 
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi import FastAPI, Request, Form
+
 
 app = FastAPI()
 
@@ -49,3 +58,58 @@ async def reservas(request: Request):
 @app.post("/reservar", response_class=HTMLResponse)
 async def reservar(request: Request, nombre: str = Form(...), fecha: str = Form(...), hora: str = Form(...)):
     return templates.TemplateResponse("confirmacion.html", {"request": request, "nombre": nombre, "fecha": fecha, "hora": hora})
+
+
+
+
+@app.get("/")
+def read_root():
+    return DaoClientes().get_all(database)
+
+@app.get("/clientes")
+def get_clientes(request: Request, nombre: str = "nombre"):
+    clientes = DaoClientes().get_all(database)
+    return templates.TemplateResponse(
+        "clientes.html", 
+        {"request": request, "clientes": clientes}
+    )
+
+@app.post("/clientes/add")
+async def add_clientes(request: Request, nombre: str = Form(...)):
+    dao = DaoClientes()
+    cliente = Cliente(id=None, nombre=nombre)  
+    dao.add(database, cliente)
+    
+    return RedirectResponse(url="/clientes", status_code=303)
+
+
+class ClienteDelete(BaseModel):
+    nombre: str
+
+@app.post("/clientes/delete")
+def delete_clientes(request: Request, nombre: str = Form(...)):  
+    dao = DaoClientes()
+    
+    dao.delete(database, nombre)
+    
+    clientes = dao.get_all(database)
+
+    return templates.TemplateResponse(
+        "clientes.html", 
+        {"request": request, "clientes": clientes, "message": f"Cliente '{nombre}' eliminado correctamente"}
+    )
+
+@app.get("/clientes/buscar")
+def buscar_cliente(request: Request, nombre: str):
+    clientes = DaoClientes().get_all(database)
+    
+    cliente_encontrado = None
+    for cliente in clientes:
+        if cliente.nombre.lower() == nombre.lower():
+            cliente_encontrado = cliente
+            break
+    
+    if cliente_encontrado:
+        return templates.TemplateResponse("cliente_encontrado.html", {"request": request, "cliente": cliente_encontrado})
+    else:
+        return templates.TemplateResponse("clientes.html", {"request": request, "clientes": clientes, "message": f"No se encontró el cliente '{nombre}'."})

@@ -3,8 +3,9 @@
 {% block title %}Reserva en Come y Calla{% endblock %}
 
 {% block content %}
-    <h1>Realiza tu Reserva</h1>
+    <h1>Realiza tu Reserva</h1><a href="{{ url_for('index') }}">CLIENTES DE COME Y CALLA</a>
 <div class="div-form">
+    
     <form class="formulario" method="post" action="/reservar">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required><br><br>
@@ -17,6 +18,7 @@
 
         <button type="submit">Confirmar Reserva</button>
     </form>
+    
 </div>
 <div class="video-section">
     <div class="video-container">
