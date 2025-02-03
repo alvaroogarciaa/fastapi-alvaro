@@ -53,9 +53,13 @@ async def reservar(request: Request, nombre: str = Form(...), fecha: str = Form(
 
 
 
+@app.get("/")
+def read_root():
+    return DaoClientes().get_all(database)
 
 @app.get("/clientes", response_class=HTMLResponse)
 def get_clientes(request: Request):
+
     clientes = DaoClientes().get_all(database)
     return templates.TemplateResponse("clientes.html", {"request": request, "clientes": clientes})
 
@@ -63,8 +67,9 @@ def get_clientes(request: Request):
 @app.post("/clientes/add")
 async def add_clientes(request: Request, nombre: str = Form(...)):
     dao = DaoClientes()
-    cliente = Cliente(nombre=nombre)
-    dao.add(database, cliente)
+    cliente = Cliente(id=id, nombre=nombre)
+    dao.add(database, cliente)    
+    
     return RedirectResponse(url="/clientes", status_code=303)
 
 @app.post("/clientes/delete")
