@@ -1,5 +1,4 @@
-from pydantic import BaseModel
-
-class Cliente(BaseModel):
-    id: int
-    nombre: str
+class Cliente:
+    def __init__(self, id: int, nombre: str):
+        self.id = id
+        self.nombre = nombre

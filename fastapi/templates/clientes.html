@@ -4,7 +4,10 @@
     <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
 </head>
 <body>
-    <a href="/">Ir al menú</a>    
+    <a href="/">Ir al menú</a>
+    {% if nombre %}
+        <h1>Hola {{nombre}}</h1>
+    {% endif %}
     {% if clientes %}
         <h2>Lista de Clientes:</h2>
         {% for cliente in clientes %}
@@ -16,11 +19,10 @@
 
 
     <h2>Añadir cliente</h2>
-    <form action="/clientes" method="get">
-        <input type="text" name="nombre" placeholder="Añadir cliente">
-        <button type="submit">Añadir</button>
+    <form action="{{url_for('add_clientes')}}" method="post">
+        <input type="text" id="nombre" name="nombre" placeholder="Añadir cliente" required>
+        <button type="submit">Agregar</button>
     </form>
-    
 
     <h2>Eliminar cliente</h2>
     <form action="/clientes/delete" method="post">

@@ -2,11 +2,10 @@ from data.database import database
 from data.dao.dao_clientes import DaoClientes
 from data.modelo.cliente import Cliente
 
-from fastapi import FastAPI, Request, Form, HTTPException
+from fastapi import FastAPI, Request, Form
 from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-import uuid
 
 
 app = FastAPI()
@@ -59,20 +58,17 @@ def read_root():
     return DaoClientes().get_all(database)
 
 @app.get("/clientes", response_class=HTMLResponse)
-def get_clientes(request: Request):
-
+def get_clientes(request: Request, nombre: str = "usuario"):
     clientes = DaoClientes().get_all(database)
     return templates.TemplateResponse("clientes.html", {"request": request, "clientes": clientes})
 
 
 @app.post("/clientes/add")
-async def add_clientes(request: Request, nombre: str = Form(...)):
+def add_clientes(request: Request, nombre: str = Form(...)):
     dao = DaoClientes()
-    ultimo_id = 10
-    id_unico = ultimo_id + 1
-    cliente = Cliente(id=id_unico, nombre=nombre)
-    dao.add(database, cliente)
-    return RedirectResponse(url="/clientes", status_code=303)
+    dao.insert(database, nombre)
+    clientes = DaoClientes().get_all(database)
+    return templates.TemplateResponse("clientes.html", {"request": request, "clientes": clientes})
 
 
 @app.post("/clientes/delete")
@@ -81,9 +77,7 @@ async def delete_clientes(request: Request, nombre: str = Form(...)):
     cliente_eliminado = dao.delete(database, nombre)
 
     if cliente_eliminado is None:
-        return templates.TemplateResponse(
-            "clientes.html",
-            {"request": request, "clientes": dao.get_all(database), "message": f"No se encontró el cliente '{nombre}'"}
+        return templates.TemplateResponse("clientes.html", {"request": request, "clientes": dao.get_all(database), "message": f"No se encontró el cliente '{nombre}'"}
         )
 
     return RedirectResponse(url="/clientes", status_code=303)
