@@ -19,9 +19,9 @@
 
 
     <h2>Añadir cliente</h2>
-    <form action="{{url_for('add_clientes')}}" method="post">
+    <form action="/cliente/add" method="post">
         <input type="text" id="nombre" name="nombre" placeholder="Añadir cliente" required>
-        <button type="submit">Agregar</button>
+        <input type="submit" value="Agregar">
     </form>
 
     <h2>Eliminar cliente</h2>
