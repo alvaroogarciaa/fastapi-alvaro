@@ -6,6 +6,7 @@ from fastapi import FastAPI, Request, Form, HTTPException
 from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+import uuid
 
 
 app = FastAPI()
@@ -67,10 +68,12 @@ def get_clientes(request: Request):
 @app.post("/clientes/add")
 async def add_clientes(request: Request, nombre: str = Form(...)):
     dao = DaoClientes()
-    cliente = Cliente(id=id, nombre=nombre)
-    dao.add(database, cliente)    
-    
+    ultimo_id = 10
+    id_unico = ultimo_id + 1
+    cliente = Cliente(id=id_unico, nombre=nombre)
+    dao.add(database, cliente)
     return RedirectResponse(url="/clientes", status_code=303)
+
 
 @app.post("/clientes/delete")
 async def delete_clientes(request: Request, nombre: str = Form(...)):

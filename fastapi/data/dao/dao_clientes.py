@@ -1,4 +1,3 @@
-# data/dao/dao_clientes.py
 from data.modelo.cliente import Cliente
 from fastapi import HTTPException
 
@@ -22,7 +21,7 @@ class DaoClientes:
     def add(self, db, cliente: Cliente):
         cursor = db.cursor()
         if cliente.nombre:
-            cursor.execute("INSERT INTO clientes (nombre) VALUES (%s)", (cliente.nombre,))
+            cursor.execute("INSERT INTO clientes (id, nombre) VALUES (%s, %s)", (cliente.id, cliente.nombre))
         db.commit()
         cursor.close()
 
