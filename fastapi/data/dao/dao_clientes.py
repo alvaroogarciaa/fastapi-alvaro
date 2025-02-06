@@ -3,42 +3,39 @@ from fastapi import HTTPException
 
 class DaoClientes:
     def get_all(self, db) -> list[Cliente]:
-        cursor = db.cursor()
-        
-        cursor.execute("SELECT * FROM clientes")
-        
+        cursor = db.cursor(buffered=True)
+        cursor.execute("SELECT id, nombre FROM clientes")
+    
         clientes_en_db = cursor.fetchall()
-        
-        clientes: list[Cliente] = list()
-        
-        for cliente in clientes_en_db:
-            cliente = Cliente(id=cliente[0], nombre=cliente[1])
-            clientes.append(cliente)
-        
+        clientes = [Cliente(id, nombre) for id, nombre in clientes_en_db]
+    
         cursor.close()
         return clientes
 
 
-    def add(self, db, nombre: str):
+
+
+    def add(self, db, cliente: Cliente):
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM clientes WHERE nombre = %s", (nombre,))
-        sql = ("INSERT INTO clientes (nombre) values (%s) ")
-        data = (nombre,)
-        cursor.execute(sql,data)
+        cursor.execute("INSERT INTO clientes (nombre) VALUES (%s)", (cliente.nombre,))
+    
         db.commit()
+        cursor.nextset()
         cursor.close()
 
 
-    def delete(self, db, nombre: str):
+
+    def delete(self, db, id: int):
         cursor = db.cursor()
     
-        cursor.execute("SELECT * FROM clientes WHERE nombre = %s", (nombre,))
+        cursor.execute("SELECT * FROM clientes WHERE id = %s", (id,))
         cliente = cursor.fetchone()
     
         if not cliente:
-            raise HTTPException(status_code=404, detail=f"No se encontró el cliente con nombre '{nombre}'")
+            raise HTTPException(status_code=404, detail=f"No se encontró el cliente con ID '{id}'")
     
-        cursor.execute("DELETE FROM clientes WHERE nombre = %s", (nombre,))
+        cursor.execute("DELETE FROM clientes WHERE id = %s", (id,))
         db.commit()
         cursor.close()
+
 

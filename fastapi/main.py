@@ -53,10 +53,6 @@ async def reservar(request: Request, nombre: str = Form(...), fecha: str = Form(
 
 
 
-@app.get("/")
-def read_root():
-    return DaoClientes().get_all(database)
-
 @app.get("/clientes", response_class=HTMLResponse)
 def get_clientes(request: Request, nombre: str = "usuario"):
     clientes = DaoClientes().get_all(database)
@@ -64,23 +60,26 @@ def get_clientes(request: Request, nombre: str = "usuario"):
 
 
 @app.post("/clientes/add")
-def add_clientes(request: Request, nombre: str = Form(...)):
+async def add_clientes(request: Request, nombre: str = Form(...)):
     dao = DaoClientes()
-    dao.insert(database, nombre)
-    clientes = DaoClientes().get_all(database)
-    return templates.TemplateResponse("clientes.html", {"request": request, "clientes": clientes})
+    cliente = Cliente(id=None, nombre=nombre)  
+    dao.add(database, cliente)
+    return RedirectResponse(url="/clientes", status_code=303)
+
 
 
 @app.post("/clientes/delete")
-async def delete_clientes(request: Request, nombre: str = Form(...)):
+def delete_clientes(request: Request, id: int = Form(...)):  
     dao = DaoClientes()
-    cliente_eliminado = dao.delete(database, nombre)
+    dao.delete(database, id) 
+    
+    clientes = dao.get_all(database)
 
-    if cliente_eliminado is None:
-        return templates.TemplateResponse("clientes.html", {"request": request, "clientes": dao.get_all(database), "message": f"No se encontró el cliente '{nombre}'"}
-        )
+    return templates.TemplateResponse(
+        "clientes.html", 
+        {"request": request, "clientes": clientes, "message": f"Cliente con ID '{id}' eliminado correctamente"}
+    )
 
-    return RedirectResponse(url="/clientes", status_code=303)
 
 @app.get("/clientes/buscar", response_class=HTMLResponse)
 def buscar_cliente(request: Request, nombre: str):
